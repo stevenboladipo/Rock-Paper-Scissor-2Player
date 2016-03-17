@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Rock Paper Scissor 2p</title>
+</head>
+
+<body>
+
+ <script type="text/javascript">
+
+function playGame()
+{
+    var user1 = prompt("Rock, Paper, Scissors");
+    var user2 = prompt("Rock, Paper, Scissors");
+    if (user1 === "rock") {
+        document.write("<b>rock</b>");
+    } else if (user1 === "scissors") {
+        document.write("<b>scissors</b>");
+    } else if (user1 === "paper") {
+        document.write("<b>paper</b>");
+    } else {
+        alert("Please select one of the options.");
+    }
+    
+    document.write(" vs ");
+    
+    if (user2 === "rock") {
+        document.write("<b>rock</b>");
+    } else if (user2 === "scissors") {
+        document.write("<b>scissors</b>");
+    } else if (user2 === "paper") {
+        document.write("<b>paper</b>");
+    } else {
+        alert("Please select one of the options");
+    }
+    
+    document.write(" = ");
+    
+    if (user1 === user2) {
+        document.write("tie, try again!");
+    }
+    
+    if (user1 === "rock") {
+        if (user2 === "scissors") {
+            document.write("Nice! " + name1 + "<b> wins!</b>");
+        } else if (user2 === "rock") {
+            document.write("tie...");
+        } else {
+            document.write("Nice! " + name2 + "<b> wins!</b>");
+        }
+    } else if (user1 === "paper") {
+        if (user2 === "rock") {
+            document.write("Nice " + name1 + "<b> wins!</b>");
+        } else if (user2 === "rock") {
+            document.write("Nice " + name2 + "<b> wins!</b>");
+        } else {
+            document.write("tie...");
+        }
+    } else if (user1 === "scissors") {
+        if (user2 === "scissors") {
+            document.write("tie...");
+        } else if (user2 === "paper") {
+            document.write("Nice! " + name1 + "<b> wins!</b>");
+        } else {
+            document.write("Nice! " + name2 + "<b> wins!</b>");
+        }
+    } else {
+        document.write("Whoa");
+    }
+    
+    var playAgain = confirm("Play Again?");
+    if(playAgain) {
+        // just run the game again
+        playGame();
+    }
+}
+
+// ask for their names
+var name1 = prompt("what is your name?");
+var name2 = prompt("what is your name?");
+
+// run the first game
+playGame();
+
+</script>
+</body>
+</html>
+
+
